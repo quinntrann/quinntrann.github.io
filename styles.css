@@ -3,6 +3,11 @@
     box-sizing: border-box;
 }
 
+::selection {
+    background-color: #214f43;
+    color: #ffffff;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -124,8 +129,10 @@ a:focus {
 }
 
 .navigation-links a {
-    display: inline-block;
-    padding: 0.4rem 0;
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.5rem 0;
 }
 
 .current-page a {
@@ -273,11 +280,169 @@ a:focus {
     margin-left: auto;
 }
 
-/* Keep the initial homepage usable while later commits refine responsive styles. */
+.footer-links a,
+.support-links a,
+.card-action a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+}
+
+/* Guide pages share a contents column and a readable content column. */
+.breadcrumbs {
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+}
+
+.breadcrumbs a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+}
+
+.guide-heading {
+    max-width: 48rem;
+    margin-bottom: 3rem;
+}
+
+.guide-heading h1 {
+    font-size: 2.75rem;
+}
+
+.guide-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 13rem) minmax(0, 1fr);
+    align-items: start;
+    gap: 3rem;
+}
+
+.page-contents {
+    padding-top: 1.25rem;
+    border-top: 1px solid #c7d2c4;
+}
+
+.page-contents h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+}
+
+.page-contents ul,
+.resource-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.page-contents a,
+.resource-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.5rem 0;
+}
+
+.guide-content {
+    min-width: 0;
+    max-width: 72ch;
+}
+
+.guide-section {
+    margin-bottom: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid #c7d2c4;
+    scroll-margin-top: 1.5rem;
+}
+
+.guide-section h2,
+.guide-next h2 {
+    margin-bottom: 1rem;
+}
+
+.guide-section h3 {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+}
+
+.content-list,
+.steps {
+    margin: 0 0 1.25rem;
+    padding-left: 1.5rem;
+}
+
+.content-list li,
+.steps li {
+    margin-bottom: 0.75rem;
+    padding-left: 0.25rem;
+}
+
+.guide-note {
+    margin-top: 1.75rem;
+    padding: 1.5rem;
+    background-color: #edf0e8;
+    border-radius: 0.5rem;
+}
+
+.guide-note h3 {
+    margin-top: 0;
+}
+
+.guide-note ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.guide-note li + li {
+    margin-top: 0.5rem;
+}
+
+.source-note {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    font-size: 0.9375rem;
+}
+
+.comparison-table {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    text-align: left;
+    font-variant-numeric: tabular-nums;
+}
+
+.comparison-table caption {
+    margin-bottom: 0.75rem;
+    font-size: 0.9375rem;
+    text-align: left;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #c7d2c4;
+    vertical-align: top;
+    overflow-wrap: anywhere;
+}
+
+.comparison-table thead th {
+    background-color: #edf0e8;
+}
+
+.comparison-table tbody th {
+    width: 28%;
+}
+
+.comparison-table p:last-child,
+.guide-note p:last-child,
+.guide-next p:last-child {
+    margin-bottom: 0;
+}
+
+/* Stack content without hiding any guide topics on smaller screens. */
 @media (max-width: 48rem) {
     .hero,
     .guide-grid,
-    .home-details {
+    .home-details,
+    .guide-layout {
         grid-template-columns: minmax(0, 1fr);
     }
 
@@ -287,5 +452,32 @@ a:focus {
 
     .hero h1 {
         font-size: 2.25rem;
+    }
+
+    .guide-heading h1 {
+        font-size: 2.25rem;
+        overflow-wrap: anywhere;
+    }
+
+    .guide-heading {
+        margin-bottom: 2rem;
+    }
+
+    .guide-layout {
+        gap: 2.5rem;
+    }
+
+    .page-contents {
+        padding-bottom: 1.25rem;
+        border-bottom: 1px solid #c7d2c4;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .comparison-table tbody th {
+        width: 34%;
     }
 }

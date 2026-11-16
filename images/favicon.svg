@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <title>GoLocal</title>
+    <rect x="1" y="1" width="30" height="30" rx="2" fill="#ffffff" stroke="#214f43" stroke-width="2" />
+    <text x="16" y="22" fill="#214f43" font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">GL</text>
+</svg>
